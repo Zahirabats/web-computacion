@@ -1,0 +1,12 @@
+/* proyecto.css */
+.back-link{display:inline-block;margin:2rem 0;color:var(--muted);font-weight:500;transition:color .2s}
+.back-link:hover{color:var(--accent)}
+.proyecto-header{border-bottom:1px solid var(--line);padding-bottom:2rem;margin-bottom:2rem}
+.proyecto-header h1{font-size:2.5rem;font-weight:700;margin:1rem 0}
+.badge{background:var(--blue);color:#fff;padding:.25rem .75rem;border-radius:999px;font-size:.85rem;font-weight:600;text-transform:uppercase}
+.meta{color:var(--muted);margin:0}
+.proyecto-body h2,.proyecto-body h3{margin:2rem 0 1rem}
+.proyecto-body p{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:800px;margin:0}
+.tech-list{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0}
+.tech-list li{background:var(--celeste-soft);border:1px solid var(--line);padding:.5rem 1rem;border-radius:8px;color:var(--text);font-size:.95rem}
+@media (max-width:600px){.proyecto-header h1{font-size:2rem}}

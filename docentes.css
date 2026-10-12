@@ -1,0 +1,14 @@
+/* docentes.css */
+.phead{padding:4rem 0 2rem}
+.phead.center{text-align:center}
+.phead h1{font-size:2.5rem;font-weight:700;margin-bottom:1rem}
+.rule{border:0;border-top:1px solid var(--line);margin:2rem 0}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.9rem;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--celeste)}
+.card .ico{display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:var(--celeste-soft);color:var(--accent);margin-bottom:1.4rem}
+.card h3{font-size:1.45rem;font-weight:700;margin:0 0 .6rem}
+.card p{color:var(--muted);margin:0 0 1.6rem;flex:1}
+.card p strong{color:var(--text)}
+.card .go{font-weight:600;display:inline-flex;align-items:center;gap:.4rem;border-bottom:2px solid var(--celeste);align-self:flex-start;padding-bottom:2px;overflow-wrap:anywhere}
+@media (max-width:600px){.phead{padding:2rem 0 1rem}.phead h1{font-size:2rem}.dgrid{grid-template-columns:1fr}}
