@@ -18,14 +18,14 @@ section.explore{padding:clamp(3.5rem,8vw,6rem) 0}
 .head{max-width:36rem;margin-bottom:2.5rem}
 .head h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:700;letter-spacing:-.015em;text-transform:uppercase}
 .head p{color:var(--muted);margin:.8rem 0 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.9rem;transition:transform .2s,border-color .2s}
 .card:hover{transform:translateY(-4px);border-color:var(--celeste)}
-.ico{display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:var(--celeste-soft);color:var(--navy-2);margin-bottom:1.4rem}
+.ico{display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:var(--celeste-soft);color:var(--accent);margin-bottom:1.4rem}
 .card h3{font-size:1.45rem;font-weight:700;margin-bottom:.6rem}
 .card p{margin:0 0 1.6rem;color:var(--muted);flex:1}
-.card .go{font-weight:600;display:inline-flex;align-items:center;gap:.4rem;border-bottom:2px solid var(--celeste);align-self:flex-start;padding-bottom:2px}
+.card .go{font-weight:600;display:inline-flex;align-items:center;gap:.4rem;border-bottom:2px solid var(--red);align-self:flex-start;padding-bottom:2px}
 .eyebrow{margin:0 0 1rem!important;font-size:.85rem!important;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--celeste)!important}
-.ell{position:absolute;border-radius:50%;pointer-events:none;border:1px solid rgba(255,255,255,.16);background:radial-gradient(circle at 30% 30%,rgba(116,172,223,.35),rgba(116,172,223,0) 70%)}
+.ell{position:absolute;border-radius:50%;pointer-events:none;border:1px solid rgba(255,255,255,.16);background:radial-gradient(circle at 30% 30%,rgba(156,203,242,.35),rgba(156,203,242,0) 70%)}
 .e1{width:420px;height:420px;right:-120px;top:-140px}.e2{width:260px;height:260px;left:-90px;bottom:-110px}.e3{width:120px;height:120px;right:38%;bottom:12%;opacity:.7}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr} .term{display:none} .grid{grid-template-columns:1fr}}
