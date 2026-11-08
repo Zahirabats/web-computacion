@@ -1,4 +1,5 @@
 // proyecto.js — detalle de un proyecto (datos en proyectos-data.js)
+// Campos opcionales por proyecto: año, enlace, fotos, videos, secciones (texto en párrafos con \n\n y lista opcional).
 document.addEventListener('DOMContentLoaded', () => {
   const id = new URLSearchParams(window.location.search).get('id');
   const contenedor = document.getElementById('detalle-proyecto');
@@ -23,16 +24,36 @@ document.addEventListener('DOMContentLoaded', () => {
           </figure>`).join('')}</div>`
       : '';
 
+    const videos = proyecto.videos && proyecto.videos.length
+      ? `<div class="videos">${proyecto.videos.map(v => `
+          <figure>
+            <video controls preload="metadata" playsinline${v.poster ? ` poster="${v.poster}"` : ''}>
+              <source src="${v.src}" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+            ${v.titulo ? `<figcaption>${v.titulo}</figcaption>` : ''}
+          </figure>`).join('')}</div>`
+      : '';
+
+    const meta = [
+      proyecto.autor ? `<strong>Autor:</strong> ${proyecto.autor}` : '',
+      proyecto.año ? `<strong>Año:</strong> ${proyecto.año}` : ''
+    ].filter(Boolean).join(' | ');
+
+    const parrafos = t => String(t || '').split(/\n\s*\n/).map(x => `<p>${x}</p>`).join('');
+    const lista = l => l && l.length ? `<ul class="lista">${l.map(i => `<li>${i}</li>`).join('')}</ul>` : '';
+
     contenedor.innerHTML = `
       <a href="proyectos.html" class="back-link">‹ Volver a proyectos</a>
       <div class="proyecto-header">
         <h1>${proyecto.titulo}</h1>
-        <p class="meta"><strong>Autor:</strong> ${proyecto.autor} | <strong>Año:</strong> ${proyecto.año}</p>
+        ${meta ? `<p class="meta">${meta}</p>` : ''}
         ${enlace}
       </div>
       ${galeria}
+      ${videos}
       <div class="proyecto-body">
-        ${secciones.map(s => `<h2>${s.titulo}</h2><p>${s.texto}</p>`).join('')}
+        ${secciones.map(s => `<h2>${s.titulo}</h2>${parrafos(s.texto)}${lista(s.lista)}`).join('')}
       </div>`;
     document.title = `${proyecto.titulo} · Escuela Técnica N°29 DE 6`;
   } else {
