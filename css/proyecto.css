@@ -1,0 +1,27 @@
+/* proyecto.css */
+.back-link{display:inline-block;margin:2rem 0;color:var(--muted);font-weight:500;transition:color .2s}
+.back-link:hover{color:var(--accent)}
+.proyecto-header{border-bottom:1px solid var(--line);padding-bottom:2rem;margin-bottom:2rem}
+.proyecto-header h1{font-size:2.5rem;font-weight:700;margin:1rem 0}
+.badge{background:var(--blue);color:#fff;padding:.25rem .75rem;border-radius:999px;font-size:.85rem;font-weight:600;text-transform:uppercase}
+.meta{color:var(--muted);margin:0}
+.proyecto-body h2,.proyecto-body h3{margin:2rem 0 1rem}
+.proyecto-body p{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:800px;margin:0}
+.tech-list{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0}
+.tech-list li{background:var(--celeste-soft);border:1px solid var(--line);padding:.5rem 1rem;border-radius:8px;color:var(--text);font-size:.95rem}
+@media (max-width:600px){.proyecto-header h1{font-size:2rem}}
+.btn-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.2rem;padding:.7rem 1.4rem;min-height:48px;border-radius:12px;background:var(--blue);color:#fff;font-weight:600;transition:background .2s}
+.btn-link:hover{background:var(--blue-d)}
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem;align-items:start;margin-bottom:1rem}
+.galeria figure{margin:0}
+.galeria img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:var(--surface)}
+.galeria figcaption{color:var(--muted);font-size:.9rem;line-height:1.4;margin-top:.5rem}
+/* Videos y listas (EasyNFC, EDU-TECH HUB) */
+.videos{margin:0 0 1.5rem}
+.videos figure{margin:0 0 1.25rem}
+.videos video{display:block;width:100%;max-width:960px;height:auto;aspect-ratio:16/9;border-radius:16px;border:1px solid var(--line);background:#000;box-shadow:0 14px 30px -18px rgba(9,33,71,.5)}
+.videos figcaption{color:var(--muted);font-size:.9rem;margin-top:.5rem}
+.proyecto-body p+p{margin-top:1rem}
+.proyecto-body .lista{max-width:800px;margin:1rem 0 0;padding:0;list-style:none;display:grid;gap:.6rem}
+.proyecto-body .lista li{position:relative;padding-left:1.5rem;font-size:1.05rem;line-height:1.6}
+.proyecto-body .lista li::before{content:"›";position:absolute;left:0;color:var(--red);font-weight:700}

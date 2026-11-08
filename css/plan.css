@@ -1,0 +1,105 @@
+.phead{padding:clamp(2.5rem,6vw,4rem) 0 1.5rem}
+.center{text-align:center}
+.center p{margin-inline:auto}
+.chips.c{justify-content:center}
+.chip{font:inherit;font-weight:500;padding:.45rem 1.1rem;min-height:44px;border-radius:999px;border:1px solid var(--line);background:var(--surface);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.rule{border:0;border-top:1px solid var(--line);margin:1.5rem 0 2rem}
+.mats{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem 1.6rem;margin-top:2.2rem}
+.mat{width:128px;text-align:center}
+.mat i{display:grid;place-items:center;width:84px;height:84px;margin:0 auto .7rem;border-radius:50%;background:var(--celeste-soft);border:2px solid var(--celeste);color:var(--accent)}
+.mat b{display:block;font-size:.98rem}.mat span{color:var(--muted);font-size:.85rem}
+
+/* Nuevos estilos para la grilla de materias */
+.grid-plan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.plan-card {
+  background: var(--surface, #fff);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-head {
+  border-bottom: 2px dashed var(--line);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ciclo-badge {
+  display: inline-block;
+  background: var(--line);
+  color: var(--muted, #374151);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.plan-head h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.materia-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.materia-list li {
+  font-size: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.materia-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+/* 1. Asegurar que la barra de años esté perfectamente centrada */
+.chips.c {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+/* 2. Ensanchar un poquito el contenedor para que entren mejor las palabras largas */
+.mat {
+  width: 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 3. Mostrar todo el texto sin recortar, dándole espacio para 3 renglones */
+.mat b {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.3;
+  margin-top: 0.5rem;
+  /* 3.9em equivale exactamente al alto de 3 renglones. 
+     Así, tengan 1, 2 o 3 renglones, todos los circulitos quedan perfectamente alineados */
+  min-height: 3.9em; 
+}
