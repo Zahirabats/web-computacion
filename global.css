@@ -126,3 +126,63 @@ nav.main{order:1}
 }
 /* En pantallas táctiles el tooltip del logo no se muestra salvo con teclado */
 @media (hover:none){[data-tip]:not(:focus-visible)::after,[data-tip]:not(:focus-visible)::before{display:none}}
+
+/* =====================================================================
+   SP3-03 · Rojo integrado a la paleta
+   Regla: azul marino/azul = estructura · celeste = superficies suaves
+          rojo = acento (lo que marca "estás acá" o "hacé clic")
+   Se usa poco a propósito: solo en detalles, nunca en fondos grandes.
+   ===================================================================== */
+:root{
+  --red-d:#8F0E0E;        /* rojo oscuro: hover / presionado */
+  --red-soft:#FCE9E9;     /* rojo muy claro: fondos de resaltado */
+  --on-red:#FFFFFF;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--red-d:#C93A3F;--red-soft:#3A1519}
+}
+:root[data-theme="dark"]{--red-d:#C93A3F;--red-soft:#3A1519}
+
+/* Menú: la página activa lleva una barrita roja */
+nav.main a:not(.ig){position:relative}
+nav.main a:not(.ig).active::after{content:"";position:absolute;left:.9rem;right:.9rem;bottom:.25rem;height:3px;border-radius:2px;background:var(--red)}
+nav.main a:not(.ig):hover::after{content:"";position:absolute;left:.9rem;right:.9rem;bottom:.25rem;height:3px;border-radius:2px;background:var(--red);opacity:.45}
+nav.main a:not(.ig).active:hover::after{opacity:1}
+@media (max-width:860px){
+  nav.main a:not(.ig).active::after,nav.main a:not(.ig):hover::after{left:1rem;right:auto;width:28px}
+}
+
+/* Enlaces de acción ("Ver detalles", "Ver catálogo"…): subrayado rojo en todas las tarjetas */
+main .card .go{border-bottom-color:var(--red)}
+main .card:hover .go{color:var(--red)}
+:root[data-theme="dark"] main .card:hover .go{color:var(--text)}
+main .card:hover{border-color:var(--red)}
+
+/* Volver / enlaces secundarios */
+.back-link:hover{color:var(--red)}
+.btn-link{box-shadow:inset 0 -3px 0 var(--red)}
+.btn-link:hover{background:var(--blue-d)}
+
+/* Botón de llamada a la acción en rojo (para usar donde haga falta uno solo por pantalla) */
+.btn.accent{background:var(--red);color:var(--on-red)}
+.btn.accent:hover{background:var(--red-d)}
+
+/* Filtros (chips): el seleccionado marca con rojo abajo, el hover lo insinúa */
+.chip:hover{border-color:var(--red)}
+.chip[aria-pressed="true"]{box-shadow:inset 0 -3px 0 var(--red)}
+
+/* Plan de estudio: viñetas y círculos con detalle rojo al pasar el mouse */
+.materia-list li::before{color:var(--red)}
+.mat:hover i{border-color:var(--red)}
+
+/* Fotos de proyectos: marco rojo al enfocar con teclado */
+.galeria a:focus-visible{outline-color:var(--red)}
+
+/* Pie de página: títulos con detalle rojo */
+footer h4{display:inline-block;padding-bottom:.35rem;border-bottom:2px solid var(--red)}
+
+/* Texto seleccionado y foco: el anillo de foco sigue en azul/celeste (contraste),
+   el rojo queda reservado para acentos, no para estados de accesibilidad */
+
+/* Piezas listas para el carrusel (SP3-01) */
+:root{--dot:var(--line);--dot-on:var(--red)}

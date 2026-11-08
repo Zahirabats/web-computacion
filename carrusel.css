@@ -1,0 +1,38 @@
+/* carrusel.css — SP3-01 · Carrusel de proyectos destacados (inicio) */
+.car-sec{padding:clamp(3rem,7vw,5rem) 0 0}
+.car{position:relative;border-radius:24px;overflow:hidden;isolation:isolate;color:#fff;min-height:clamp(460px,70vh,620px);background:linear-gradient(160deg,var(--hero-a),var(--hero-b));box-shadow:0 24px 50px -28px rgba(9,33,71,.6)}
+
+/* Cada slide: foto de fondo + texto */
+.car-slide{position:absolute;inset:0;display:flex;align-items:center;padding:clamp(1.5rem,5vw,3.5rem) clamp(1.5rem,5vw,3.5rem) 6rem;opacity:0;visibility:hidden;transition:opacity .7s,visibility 0s .7s}
+.car-slide.on{opacity:1;visibility:visible;transition:opacity .7s}
+.car-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.car-slide::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,21,41,.9) 0%,rgba(6,21,41,.6) 55%,rgba(6,21,41,.25) 100%)}
+.car-text{max-width:34rem}
+.car-title{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;letter-spacing:-.02em;color:#fff}
+.car-title::after{content:"";display:block;width:56px;height:4px;border-radius:2px;background:#E5484D;margin:1rem 0 0}
+.car-desc{margin:1.2rem 0 1.8rem;font-size:1.1rem;color:var(--on-hero-muted);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.car .btn.accent{background:#BF1313;color:#fff}
+.car .btn.accent:hover{background:#8F0E0E}
+
+/* Controles: anterior / puntos / siguiente / pausa */
+.car-ctl{position:absolute;left:clamp(1.5rem,5vw,3.5rem);bottom:clamp(.8rem,2.5vw,1.6rem);z-index:2;display:flex;align-items:center;gap:.3rem}
+.car-btn{display:grid;place-items:center;width:44px;height:44px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(6,21,41,.45);color:#fff;cursor:pointer;transition:background .2s}
+.car-btn:hover{background:rgba(255,255,255,.18)}
+.car-dots{display:flex;align-items:center;margin:0 .2rem}
+.car-dot{display:grid;place-items:center;width:30px;height:44px;padding:0;border:0;background:none;cursor:pointer}
+.car-dot::before{content:"";width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.55);transition:width .25s,background .25s}
+.car-dot[aria-current="true"]::before{width:26px;background:#E5484D}
+.car .car-btn:focus-visible,.car .car-dot:focus-visible{outline-color:#fff}
+.car .car-pause .i-play{display:none}
+.car.paused .car-pause .i-play{display:block}
+.car.paused .car-pause .i-pause{display:none}
+
+/* Un solo proyecto: sin controles ni tarjetas */
+.car.solo .car-ctl{display:none}
+.car.solo .car-slide{padding-bottom:clamp(1.5rem,5vw,3.5rem)}
+
+@media (max-width:860px){
+  .car{min-height:clamp(480px,78vh,600px)}
+  .car-slide{align-items:flex-end}
+  .car-slide::before{background:linear-gradient(0deg,rgba(6,21,41,.92) 0%,rgba(6,21,41,.65) 55%,rgba(6,21,41,.2) 100%)}
+}
